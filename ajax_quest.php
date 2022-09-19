@@ -11,6 +11,11 @@ switch ($_GET['action']) {
         if (isset($_GET['product_id']))
             $cProducts->HideProduct($_GET['product_id']);
         break;
+        
+    case 'change_qty':
+        if (isset($_GET['mutable_value']))
+            $cProducts->ChangeQty($_GET['product_id'], $_GET['mutable_value']);
+        break;
 }
 
 ?>

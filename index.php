@@ -32,7 +32,7 @@
             <td><?=$value['PRODUCT_NAME'];?></td>
             <td><?=$value['PRODUCT_PRICE'];?> руб.</td>
             <td><?=$value['PRODUCT_ARTICLE'];?></td>
-            <td><?=$value['PRODUCT_QUANTITY'];?></td>
+            <td><button onclick='change_qty(<?=$value['ID'];?>, -1)'>-</button><nobr id="qty_<?=$value['ID'];?>"><?=$value['PRODUCT_QUANTITY'];?></nobr><button onclick='change_qty(<?=$value['ID'];?>, 1)'>+</button></td>
             <td><?=$value['DATE_CREATE'];?></td>
             <td><button onclick='hide_td(<?=$value['ID'];?>)'>Скрыть</button></td>
         </tr>
