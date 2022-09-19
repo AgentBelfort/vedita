@@ -11,7 +11,7 @@ class CProducts
 
     function GetProducts(Int $limit = 10)
     {
-        $stmt = $this->connection->prepare("SELECT * FROM `products` LIMIT ?");
+        $stmt = $this->connection->prepare("SELECT * FROM `products` ORDER BY `DATE_CREATE` DESC LIMIT ?");
         $stmt->bind_param("i", $limit);
         $stmt->execute();
         $result = $stmt->get_result();

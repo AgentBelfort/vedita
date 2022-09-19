@@ -25,10 +25,6 @@
         $cProducts = new CProducts($_ENV['db']['host'], $_ENV['db']['login'], $_ENV['db']['password'], $_ENV['db']['name']);
         $rows = $cProducts->GetProducts();
 
-        usort($rows, function($a,$b){ // сортировка товаров
-            return strtotime($a['DATE_CREATE'])<strtotime($b['DATE_CREATE']) ? 1 : -1;
-        });
-
         foreach($rows as $key=>$value): ?>
         <tr id="tr_<?=$value['ID'];?>">
             <td><?=$value['ID'];?></td>
